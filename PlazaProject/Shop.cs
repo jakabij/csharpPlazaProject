@@ -4,20 +4,20 @@ using System.Text;
 
 namespace PlazaProject
 {
-    interface Shop
+    public interface Shop
     {
-        public string GetName();
-        public string GetOwner();
-        public bool IsOpen();
-        public void Open();
-        public void Close();
-        public List<Product> GetProducts();
-        public Product FindByName(String name);
-        public float GetPrice(long barcode);
-        public bool HasProduct(long barcode);
-        public void AddNewProduct(Product product, int quantity, float price);
-        public void AddProduct(long barcode, int quantity);
-        public Product BuyProduct(long barcode);
-        public List<Product> BuyProducts(long barcode, int quantity);
+        string GetName();
+        string GetOwner();
+        bool IsOpen();
+        void Open();
+        void Close();
+        List<Product> GetProducts();
+        Product FindByName(String name);
+        float GetPrice(long barcode);
+        bool HasProduct(long barcode);
+        void AddNewProduct(Product product, int quantity, float price);
+        void AddProduct(long barcode, int quantity);
+        Product BuyProduct(long barcode);
+        List<Product> BuyProducts(long barcode, int quantity);
     }
 }

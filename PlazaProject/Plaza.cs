@@ -4,15 +4,15 @@ using System.Text;
 
 namespace PlazaProject
 {
-    interface Plaza
+    public interface Plaza
     {
-        public List<Shop> GetShops();
-        public void AddShop(Shop shop);
-        public void RemoveShop(Shop shop);
-        public Shop FindShopByName(string name);
-        public bool IsOpen();
-        public void Open();
-        public void Close();
+        List<Shop> GetShops();
+        void AddShop(Shop shop);
+        void RemoveShop(Shop shop);
+        Shop FindShopByName(string name);
+        bool IsOpen();
+        void Open();
+        void Close();
 
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PlazaProject
 {
-    class ShopImpl : Shop
+    public class ShopImpl : Shop
     {
         private string name;
         private string owner;
@@ -78,6 +78,51 @@ namespace PlazaProject
         public void Open()
         {
             throw new NotImplementedException();
+        }
+
+        private class ShopEntryImpl
+        {
+            private Product product;
+            private int quantity;
+            private float price;
+            private ShopEntryImpl(Product product, int quantity, float price)
+            {
+                this.product = product;
+                this.quantity = quantity;
+                this.price = price;
+            }
+            public Product GetProduct()
+            {
+
+            }
+            public void SetProduct(Product product)
+            {
+
+            }
+            public int GetQuantity()
+            {
+
+            }
+            public void SetQuantity(int quantity)
+            {
+
+            }
+            public void IncreaseQuantity(int amount)
+            {
+
+            }
+            public void DecreaseQuantity(int amount)
+            {
+
+            }
+            public float GetPrice()
+            {
+
+            }
+            public void SetPrice(int price)
+            {
+
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PlazaProject
 {
-    class PlazaImpl : Plaza
+    public class PlazaImpl : Plaza
     {
         private List<Shop> shops;
         public PlazaImpl()
@@ -14,7 +14,7 @@ namespace PlazaProject
 
         public void AddShop(Shop shop)
         {
-            throw new NotImplementedException();
+            this.shops.Add(shop);
         }
 
         public void Close()
@@ -24,12 +24,16 @@ namespace PlazaProject
 
         public Shop FindShopByName(string name)
         {
+            foreach(var shop in shops)
+            {
+                
+            }
             throw new NotImplementedException();
         }
 
         public List<Shop> GetShops()
         {
-            throw new NotImplementedException();
+            return this.shops;
         }
 
         public bool IsOpen()
@@ -44,7 +48,14 @@ namespace PlazaProject
 
         public void RemoveShop(Shop shop)
         {
-            throw new NotImplementedException();
+            if(shops.Contains(shop))
+            {
+                shops.Remove(shop);
+            }
+            else
+            {
+                throw new Exception("No shop like that!");
+            }
         }
     }
 }
