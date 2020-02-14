@@ -21,5 +21,20 @@ namespace PlazaProject
         {
 
         }
+
+        public override long GetBarcode()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string GetName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string GetManufacturer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

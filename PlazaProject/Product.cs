@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PlazaProject
 {
-    public abstract class Product
+    abstract public class Product
     {
         protected long barcode;
         protected string name;
@@ -15,8 +15,8 @@ namespace PlazaProject
             this.name = name;
             this.manufacturer = manufacturer;
         }
-        public long getBarcode();
-        string getName();
-        string getManufacturer();
+        abstract public long GetBarcode();
+        abstract public string GetName();
+        abstract public string GetManufacturer();
     }
 }

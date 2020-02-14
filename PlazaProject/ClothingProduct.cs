@@ -17,5 +17,20 @@ namespace PlazaProject
             this.Material = material;
             this.Type = type;
         }
+
+        public override long GetBarcode()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string GetName()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string GetManufacturer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
