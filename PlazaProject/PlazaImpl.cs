@@ -26,7 +26,10 @@ namespace PlazaProject
         {
             foreach(var shop in shops)
             {
-                
+                if(shop.GetName().Equals(name))
+                {
+                    return shop;
+                }
             }
             throw new NotImplementedException();
         }
