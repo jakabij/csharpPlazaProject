@@ -56,13 +56,7 @@ namespace PlazaProject
 
         public void RemoveShop(Shop shop)
         {
-            foreach(var shopInList in shops)
-            {
-                if(shopInList.GetName().Equals(shop.GetName()) && shopInList.GetOwner().Equals(shop.GetOwner()))
-                {
-                    shops.Remove(shopInList);
-                }
-            }
+            this.shops.Remove(shop);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace PlazaProject
             shopEntryImpl.SetProduct(product);
             shopEntryImpl.SetQuantity(quantity);
             shopEntryImpl.SetPrice(price);
-            Console.WriteLine("------------"+shopEntryImpl.GetPrice());
+
             this.products.Add(product.GetBarcode(), shopEntryImpl);
         }
 
@@ -149,14 +149,6 @@ namespace PlazaProject
             private Product product;
             private int quantity;
             private float price;
-
-            /*public ShopEntryImpl(Product product, int quantity, float price)
-            {
-                this.product = product;
-                this.quantity = quantity;
-                this.price = price;
-            }*/
-
             public Product GetProduct()
             {
                 return this.product;
