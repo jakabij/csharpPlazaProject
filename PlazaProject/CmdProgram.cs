@@ -12,9 +12,22 @@ namespace PlazaProject
         {
 
         }
-        public void run()
+        public void Run()
         {
+            Console.WriteLine("There are no plaza created yet! Press\n1) to create a new plaza.\n2) to exit.");
+            string userInput = Console.ReadLine();
+            if(userInput.Equals("1"))
+            {
 
+            }
+            else if(userInput.Equals("2"))
+            {
+                System.Environment.Exit(1);
+            }
+            else
+            {
+                throw new Exception("No choice like that!");
+            }
         }
     }
 }

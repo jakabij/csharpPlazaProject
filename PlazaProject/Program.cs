@@ -6,7 +6,8 @@ namespace PlazaProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            CmdProgram cmdProgram = new CmdProgram(args);
+            cmdProgram.Run();
         }
     }
 }

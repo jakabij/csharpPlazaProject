@@ -6,7 +6,7 @@ namespace PlazaProject
 {
     public class FoodProduct : Product
     {
-        private int Calories { get; set; }
+        private int calories;
         private DateTime bestBefore;
         public FoodProduct(long barcode, string name, string manufacturer, int calories, DateTime bestBefore)
             :base(barcode,name,manufacturer)
@@ -14,27 +14,36 @@ namespace PlazaProject
             this.barcode = barcode;
             this.name = name;
             this.manufacturer = manufacturer;
-            this.Calories = calories;
+            this.calories = calories;
             this.bestBefore = bestBefore;
         }
         public bool isStillConsumable()
         {
-
+            if(DateTime.Today<bestBefore)
+            {
+                return true;
+            }
+            return false;
         }
 
         public override long GetBarcode()
         {
-            throw new NotImplementedException();
+            return this.barcode;
         }
 
         public override string GetName()
         {
-            throw new NotImplementedException();
+            return this.name;
         }
 
         public override string GetManufacturer()
         {
-            throw new NotImplementedException();
+            return this.manufacturer;
+        }
+
+        public int GetCalories()
+        {
+            return this.calories;
         }
     }
 }

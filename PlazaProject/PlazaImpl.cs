@@ -31,7 +31,7 @@ namespace PlazaProject
                     return shop;
                 }
             }
-            throw new NotImplementedException();
+            throw new Exception("No shop like that!");
         }
 
         public List<Shop> GetShops()
