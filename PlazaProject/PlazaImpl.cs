@@ -7,6 +7,7 @@ namespace PlazaProject
     public class PlazaImpl : Plaza
     {
         private List<Shop> shops;
+        private bool open;
         public PlazaImpl()
         {
             this.shops = new List<Shop>();
@@ -19,7 +20,7 @@ namespace PlazaProject
 
         public void Close()
         {
-            throw new NotImplementedException();
+            this.open = false;
         }
 
         public Shop FindShopByName(string name)
@@ -41,23 +42,26 @@ namespace PlazaProject
 
         public bool IsOpen()
         {
-            throw new NotImplementedException();
+            if(this.open)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void Open()
         {
-            throw new NotImplementedException();
+            this.open = true;
         }
 
         public void RemoveShop(Shop shop)
         {
-            if(shops.Contains(shop))
+            foreach(var shopInList in shops)
             {
-                shops.Remove(shop);
-            }
-            else
-            {
-                throw new Exception("No shop like that!");
+                if(shopInList.GetName().Equals(shop.GetName()) && shopInList.GetOwner().Equals(shop.GetOwner()))
+                {
+                    shops.Remove(shopInList);
+                }
             }
         }
     }

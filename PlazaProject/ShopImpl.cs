@@ -8,7 +8,8 @@ namespace PlazaProject
     {
         private string name;
         private string owner;
-        private Dictionary<long, ShopImpl.ShopEntryImpl> products; //long=barcode
+        private Dictionary<long, ShopImpl.ShopEntryImpl> products=new Dictionary<long, ShopEntryImpl>();
+        private bool open;
         public ShopImpl(String name, String owner)
         {
             this.name = name;
@@ -17,7 +18,11 @@ namespace PlazaProject
 
         public void AddNewProduct(Product product, int quantity, float price)
         {
-            var shopEntryImpl=new ShopImpl.ShopEntryImpl(product,quantity,price);
+            ShopImpl.ShopEntryImpl shopEntryImpl =new ShopImpl.ShopEntryImpl();
+            shopEntryImpl.SetProduct(product);
+            shopEntryImpl.SetQuantity(quantity);
+            shopEntryImpl.SetPrice(price);
+            Console.WriteLine("------------"+shopEntryImpl.GetPrice());
             this.products.Add(product.GetBarcode(), shopEntryImpl);
         }
 
@@ -66,7 +71,7 @@ namespace PlazaProject
 
         public void Close()
         {
-            throw new NotImplementedException();
+            this.open = false;
         }
 
         public Product FindByName(string name)
@@ -127,12 +132,16 @@ namespace PlazaProject
 
         public bool IsOpen()
         {
-            throw new NotImplementedException();
+            if(this.open)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void Open()
         {
-            throw new NotImplementedException();
+            this.open = true;
         }
 
         private class ShopEntryImpl
@@ -141,12 +150,13 @@ namespace PlazaProject
             private int quantity;
             private float price;
 
-            public ShopEntryImpl(Product product, int quantity, float price)
+            /*public ShopEntryImpl(Product product, int quantity, float price)
             {
                 this.product = product;
                 this.quantity = quantity;
                 this.price = price;
-            }
+            }*/
+
             public Product GetProduct()
             {
                 return this.product;
@@ -175,7 +185,7 @@ namespace PlazaProject
             {
                 return this.price;
             }
-            public void SetPrice(int price)
+            public void SetPrice(float price)
             {
                 this.price = price;
             }
